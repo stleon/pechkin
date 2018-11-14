@@ -1,0 +1,17 @@
+{application, pechkin,
+ [{description, "App for sending notifications in telegram channels"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { pechkin_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    gproc
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, ["Lev Tonkikh"]},
+  {licenses, ["MIT"]},
+  {links, []}
+ ]}.
