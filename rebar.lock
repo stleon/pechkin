@@ -1,4 +1,14 @@
-[{<<"gproc">>,
+{"1.1.0",
+[{<<"goldrush">>,{pkg,<<"goldrush">>,<<"0.1.9">>},1},
+ {<<"gproc">>,
   {git,"git://github.com/uwiger/gproc.git",
        {ref,"ce7397809aca0d6eb3aac6db65953752e47fb511"}},
-  0}].
+  0},
+ {<<"lager">>,
+  {git,"git://github.com/erlang-lager/lager.git",
+       {ref,"69b4ada2341b8ab2cf5c8e464ac936e5e4a9f62b"}},
+  0}]}.
+[
+{pkg_hash,[
+ {<<"goldrush">>, <<"F06E5D5F1277DA5C413E84D5A2924174182FB108DABB39D5EC548B27424CD106">>}]}
+].

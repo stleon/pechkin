@@ -17,6 +17,7 @@
 
 -define(SERVER, ?MODULE).
 
+-include("log.hrl").
 -include("pechkin.hrl").
 
 -record(state, {
@@ -113,7 +114,7 @@ handle_cast(Message, State) when is_record(Message, ?TELEGRAM_MESSAGE) ->
         {ok, _RequestId} ->
             ok;
         {error, Reason} ->
-            io:format("error: ~p", [Reason])
+            ?ERR("Can not send to telegram: ~p", [Reason])
     end,
 
     {noreply, State};

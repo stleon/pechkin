@@ -14,6 +14,7 @@
 %% Supervisor callbacks
 -export([init/1]).
 
+-include("log.hrl").
 -include("pechkin.hrl").
 
 -define(SERVER, ?MODULE).
@@ -68,8 +69,9 @@ init([]) ->
                            N
                    end,
 
-    %% create pool for workers
     ok = gproc_pool:new(?TELEGRAM_WORKERS, round_robin, [{size, WorkersCount}]),
+
+    ?INFO("Create pool for ~p workers", [WorkersCount]),
 
     ChildSpecs = lists:map(
                    fun(I) ->
